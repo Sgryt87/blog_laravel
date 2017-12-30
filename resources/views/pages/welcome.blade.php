@@ -1,4 +1,6 @@
 @extends('main')
+@section('title', '| Homepage')
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -49,4 +51,5 @@
             <h2>Sidebar</h2>
         </div>
     </div>
-    @endsection
+@endsection
+
