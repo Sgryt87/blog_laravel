@@ -38,6 +38,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <div class="text-center">{!! $posts->render(); !!}</div>
         </div>
     </div>
 @endsection

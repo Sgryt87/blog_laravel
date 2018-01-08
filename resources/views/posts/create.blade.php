@@ -10,8 +10,8 @@
             <hr>
             {!! Form::open(['route' => 'posts.store', 'data-parsley-validate' => '']) !!}
             {!! Form::label('title','Title:') !!}
-            {!! Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) !!}
-            {!! Form::label('body', 'Post Body:') !!}
+            {!! Form::text('title', null, array('class' => 'form-control input-lg', 'required' => '', 'maxlength' => '255')) !!}
+            {!! Form::label('body', 'Post Body:', ['class' => 'form-spacing-top']) !!}
             {!! Form::textarea('body', null, array('class' => 'form-control', 'required' => '')) !!}
             {!! Form::submit('Create Post', array('class' => 'btn-success btn-lg btn-block', 'style' => 'margin-top:20px;')) !!}
             {!! Form::close() !!}
