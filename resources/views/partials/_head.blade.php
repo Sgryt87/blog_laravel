@@ -7,7 +7,11 @@
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-{!!  Html::style('css/styles.css') !!}
+
+<!--  CSS for Demo Purpose, don't include it in your project     -->
+{{--<link href="{{ asset('css/styles.css') }}" rel="stylesheet"/>--}}
+
+{!!  Html::style('public/css/styles.css') !!}
 @yield('stylesheets')
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

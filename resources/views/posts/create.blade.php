@@ -1,7 +1,7 @@
 @extends('main')
 @section('title', 'Create New Post')
 @section('stylesheets')
-    {!! Html::style('css/parsley.css') !!}
+    {!! Html::style('public/css/parsley.css') !!}
 @endsection
 @section('content')
     <div class="row">
