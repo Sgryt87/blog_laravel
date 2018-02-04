@@ -14,7 +14,7 @@
             {!! Form::label('remember', 'Remember Me') !!}
 
             {!! Form::submit('Login', ['class' => 'btn btn-primary btn-block form-spacing-top'] ) !!}
-            <p><a href="{{url('password/reset')}}">Forgot My Password</a></p>
+            <p><a href="{{url('password/email')}}">Forgot My Password</a></p>
 
             {!! Form::close() !!}
         </div>
