@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
-use Illuminate\Support\Facades\Session;
+use Session;
 
 class TagController extends Controller
 {
@@ -24,7 +24,7 @@ class TagController extends Controller
     public function index()
     {
         $tags = Tag::all();
-        return view('tags')->withTags($tags);
+        return view('tags.index')->withTags($tags);
     }
 
     /**

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
