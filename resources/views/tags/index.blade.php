@@ -15,7 +15,8 @@
                 @foreach($tags as $tag)
                     <tr>
                         <td>{{$tag->id}}</td>
-                        <td>{{$tag->name}}</td>
+                        <td><a href="{{route('tags.show', $tag->id)}}" style="text-decoration: none;
+">{{$tag->name}}</a></td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -29,7 +30,7 @@
                 {!!  Form::label('name', 'Name:') !!}
                 {!!Form::text('name', null, ['class' => 'form-control'])!!}
                 <br>
-                {!!Form::submit('Create New Tag', ['class' => 'btn btn-success'])!!}
+                {!!Form::submit('Create New Tag', ['class' => 'btn btn-primary'])!!}
                 {!! Form::close() !!}
             </div>
         </div>

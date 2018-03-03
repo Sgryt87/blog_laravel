@@ -29,7 +29,7 @@
                 {!!  Form::label('name', 'Name:') !!}
                 {!!Form::text('name', null, ['class' => 'form-control'])!!}
                 <br>
-                {!!Form::submit('Create New Category', ['class' => 'btn btn-success'])!!}
+                {!!Form::submit('Create New Category', ['class' => 'btn btn-primary'])!!}
                 {!! Form::close() !!}
             </div>
         </div>
