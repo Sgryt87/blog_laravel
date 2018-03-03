@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Support\Facades\Session;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -36,7 +37,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('posts.create')->withCategories($categories);
+        $tags = Tag::all();
+        return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -60,6 +62,7 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->body = $request->body;
         $post->save();
+        $post->tags()->sync($request->tags, false);
         Session::flash('success', 'The blog post was successfully saved.');
         return redirect()->route('posts.show', $post->id);
     }
@@ -90,7 +93,12 @@ class PostController extends Controller
         foreach ($categories as $category) {
             $cats[$category->id] = $category->name;
         }
-        return view('posts.edit')->withPost($post)->withCategories($cats);
+        $tags = Tag::all();
+        $tags2 = [];
+        foreach ($tags as $tag) {
+            $tags2[$tag->id] = $tag->name;
+        }
+        return view('posts.edit')->withPost($post)->withCategories($cats)->withTags($tags2);
     }
 
     /**
@@ -124,6 +132,11 @@ class PostController extends Controller
         $post->category_id = $request->input('category_id');
         $post->body = $request->input('body');
         $post->save();
+        if (isset($request->tags)) {
+            $post->tags()->sync($request->tags);
+        } else {
+            $post->tags()->sync([]);
+        }
         Session::flash('success', 'The blog post was successfully saved.');
         return redirect()->route('posts.show', $post->id);
     }
