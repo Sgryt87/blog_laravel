@@ -4,15 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model; // laravel\framework\src\Ill....
 
-class Post extends Model
-{
-    public function category()
-    {
-        return $this->belongsTo('App\Category');
-    }
+class Post extends Model {
+	public function category() {
+		return $this->belongsTo( 'App\Category' );
+	}
 
-    public function tags()
-    {
-        return $this->belongsToMany('App\Tag');
-    }
+	public function tags() {
+		return $this->belongsToMany( 'App\Tag' );
+	}
+
+	public function comments() {
+		return $this->hasMany( 'App\Comment' );
+	}
 }
